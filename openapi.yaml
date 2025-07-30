@@ -1,0 +1,56 @@
+openapi: "3.0.0"
+info:
+  description: "Demonstrate a problem with openapi-generator generate -i openapi.yaml -g nodejs-express-server"
+  version: "0.0.0"
+  title: "Test $ref to requestBodies element"
+tags:
+- name: "test"
+  description: "description"
+
+paths:
+  /works:
+    post:
+      description: "Working version - defines content body directly"
+      summary: "working version"
+      operationId: "add_works"
+      tags:
+      - "test"
+      requestBody:
+        description: "directly-defined body"
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                data:
+                  type: "string"
+      responses:
+        "200":
+          description: "Success"
+
+  /fails:
+    post:
+      description: "Failing version - defines content via reference to components/requestBodies/Body"
+      summary: "failing version"
+      operationId: "add_fails"
+      tags:
+      - "test"
+      requestBody:
+        $ref: "#/components/requestBodies/Body"
+      responses:
+        "200":
+          description: "Success"
+
+components:
+  requestBodies:
+    Body:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: "object"
+            properties:
+              data:
+                description: "data"
+                type: "string"
