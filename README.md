@@ -8,6 +8,11 @@ This shows the problem, as noted below.
 The final version was tested using @openapitools/openapi-generator-cli v 2.21.04 and node v22.15.0
 
 ## Execution
+Install openapi-generator locally
+```bash
+npm install @openapitools/openapi-generator-cli
+```
+
 Create and run the server:
 ```base
 make server
