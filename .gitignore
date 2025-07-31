@@ -1,6 +1,7 @@
 *.log
 *.js
 *.json
+README-openapi-generator.md
 
 .openapi-generator-ignore
 .openapi-generator/

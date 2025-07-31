@@ -1,5 +1,8 @@
 index.js: openapi.yaml
+	mv README.md README-6678.md
 	npx openapi-generator-cli generate -i openapi.yaml -g nodejs-express-server
+	mv README.md README-openapi-generator.md
+	mv README-6678.md README.md
 
 PHONY: server
 server: index.js
@@ -31,4 +34,4 @@ clean:
 	rm -f .openapi-generator-ignore
 	rm -f package.json
 	rm -f package-lock.json
-	rm -f README.md
+	rm -f README-openapi-generator.md
