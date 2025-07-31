@@ -1,0 +1,12 @@
+*.log
+*.js
+*.json
+
+.openapi-generator-ignore
+.openapi-generator/
+api/
+controllers/
+error.log
+node_modules/
+services/
+utils/
