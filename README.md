@@ -14,7 +14,7 @@ npm install @openapitools/openapi-generator-cli
 ```
 
 Create and run the server:
-```base
+```bash
 make server
 make run
 ```
